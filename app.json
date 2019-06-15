@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/movie/movie",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "00FF7F",
+    "navigationBarTitleText": "朵眼电影",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#00FF7F",
+    "color": "#000",
+    "selectedColor": "#F6F6F6",
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "近期电影",
+        "iconPath": "/images/movie.png",
+        "selectedIconPath": "/images/selected_movie.png"
+      }, {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/selected_user.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,21 @@
+/* pages/movielist/movielist.wxss */
+.movie {
+  height: 300rpx;
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.movie_img {
+  width: 200rpx;
+  height: 100%;
+}
+.movie_title {
+  color: #666;
+  font-size: 40rpx;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.movie_info {
+  margin-left: 10px;
+  flex: 1;
+}
