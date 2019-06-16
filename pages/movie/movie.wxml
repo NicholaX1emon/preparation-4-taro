@@ -2,11 +2,14 @@
   <image class="movie_img" src="{{item.images.small}}" alt="电影封面"/>
   <view class="movie_info">
     <view class="movie_title">{{item.title}}</view>
-    <view>评分: {{item.rating.average}}</view>
+    <view>
+    评分: <text class="movie_rating">{{item.rating.average}}</text> 
+    </view>
     <view>
       <text>主演:  </text>
       <text class="movie_casts" wx:for="{{item.casts}}" wx:key="{{index}}">{{item.name}} </text>
     </view>
     <view>上映时间: {{item.mainland_pubdate}}</view>
   </view>
+  <button class="movie_comment" data-movieid="{{item.id}}" bindtap='onCommentClick'>评价</button>
 </view>

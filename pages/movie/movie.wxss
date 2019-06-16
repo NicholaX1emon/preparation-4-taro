@@ -1,6 +1,6 @@
 /* pages/movielist/movielist.wxss */
 .movie {
-  height: 300rpx;
+  height: 320rpx;
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #ccc;
@@ -12,10 +12,24 @@
 .movie_title {
   color: #666;
   font-size: 40rpx;
-  font-weight: bolder;
+  font-weight: bold;
   margin-bottom: 10px;
+}
+.movie_rating {
+  color: #faaf00;
 }
 .movie_info {
   margin-left: 10px;
   flex: 1;
+}
+.movie_comment {
+  margin-top: 120rpx;
+  height: 60rpx;
+  line-height: 36rpx;
+  padding: 5px;
+  color: #fff;
+  font-size: 26rpx;
+  background-color:  #E54847;
+  border: 1px solid #ccc;
+  border-radius: 7px;
 }

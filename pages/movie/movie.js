@@ -18,10 +18,10 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  getMovieList: function () {
+    wx.showLoading({
+      title: '加载中···',
+    })
     wx.cloud.callFunction({
       name: 'getMovieList',
       data: {
@@ -33,9 +33,30 @@ Page({
       this.setData({
         movieList: this.data.movieList.concat(JSON.parse(res.result).subjects)
       })
+      wx.hideLoading()
+      if(JSON.parse(res.result).start === this.data.movieList.length) {
+        wx.showToast({
+          title: '已经全部加载完啦~~',
+        })
+      }
     }).catch(err => {
       console.error(err)
+      wx.hideLoading()
     })
+  },
+
+  onCommentClick: function (event) {
+    let movieId = event.target.dataset.movieid
+    wx.navigateTo({
+      url: `../detail/detail?movieid=${movieId}`,
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getMovieList()
   },
 
   /**
@@ -77,7 +98,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.getMovieList()
   },
 
   /**
