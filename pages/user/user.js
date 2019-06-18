@@ -5,7 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
+    location: '',
+    authorized: false
+  },
 
+  onGotUserInfo: function (event) {
+    if(this.data.authorized) {
+      wx.showToast({
+        title: '您已授权',
+      })
+    }
+    console.log('event --->', event);
+    wx.getLocation({
+      success: res => {
+        console.log('res --->', res)
+        this.setData({
+          location: res,
+          authorized: true
+        });
+      },
+    })
   },
 
   /**

@@ -1,2 +1,7 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class='user'>
+  <view class="user_img">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="user_name"></open-data>
+</view>
+<button class="user_btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">获取用户信息</button>
